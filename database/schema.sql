@@ -35,4 +35,7 @@ INSERT INTO livres(titre, auteur, statut, categorie_id) VALUES
 ('The Pragmatic Programmer', 'Andy Hunt', 'à_lire', 1),
 ('Domain-Driven Design', 'Eric Evans', 'en_cours', 2);
 
+INSERT INTO utilisateurs(nom, email) VALUES
+('nada', 'nada@gmail.com'),
+('nada2', 'nada2@gmail.com');
 
