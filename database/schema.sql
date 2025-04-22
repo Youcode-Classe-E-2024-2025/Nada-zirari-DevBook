@@ -25,3 +25,6 @@ CREATE TABLE emprunts (
   date_retour DATE,
   date_echeance DATE
 );
+
+
+INSERT INTO categories(nom) VALUES ('Programmation'), ('Architecture'), ('Design');
