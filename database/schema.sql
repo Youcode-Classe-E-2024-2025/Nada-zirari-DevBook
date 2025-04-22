@@ -28,3 +28,11 @@ CREATE TABLE emprunts (
 
 
 INSERT INTO categories(nom) VALUES ('Programmation'), ('Architecture'), ('Design');
+
+
+INSERT INTO livres(titre, auteur, statut, categorie_id) VALUES
+('Clean Code', 'Robert C. Martin', 'lu', 1),
+('The Pragmatic Programmer', 'Andy Hunt', 'à_lire', 1),
+('Domain-Driven Design', 'Eric Evans', 'en_cours', 2);
+
+
