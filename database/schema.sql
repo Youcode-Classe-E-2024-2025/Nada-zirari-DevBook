@@ -10,3 +10,10 @@ CREATE TABLE livres (
   statut VARCHAR(50), -- 'lu', 'en_cours', 'à_lire'
   categorie_id INTEGER REFERENCES categories(id) ON DELETE SET NULL
 );
+
+CREATE TABLE utilisateurs (
+  id SERIAL PRIMARY KEY,
+  nom VARCHAR(100) NOT NULL,
+  email VARCHAR(150) UNIQUE NOT NULL
+);
+
