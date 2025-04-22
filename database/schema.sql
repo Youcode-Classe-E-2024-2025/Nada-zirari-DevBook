@@ -17,3 +17,11 @@ CREATE TABLE utilisateurs (
   email VARCHAR(150) UNIQUE NOT NULL
 );
 
+CREATE TABLE emprunts (
+  id SERIAL PRIMARY KEY,
+  livre_id INTEGER REFERENCES livres(id) ON DELETE CASCADE,
+  utilisateur_id INTEGER REFERENCES utilisateurs(id) ON DELETE CASCADE,
+  date_emprunt DATE NOT NULL,
+  date_retour DATE,
+  date_echeance DATE
+);
