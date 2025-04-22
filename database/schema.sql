@@ -39,3 +39,6 @@ INSERT INTO utilisateurs(nom, email) VALUES
 ('nada', 'nada@gmail.com'),
 ('nada2', 'nada2@gmail.com');
 
+INSERT INTO emprunts(livre_id, utilisateur_id, date_emprunt, date_echeance)
+VALUES (1, 1, '2024-03-01', '2024-03-15'),
+       (2, 2, '2024-04-01', '2024-04-15');
