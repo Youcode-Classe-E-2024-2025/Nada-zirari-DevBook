@@ -49,3 +49,11 @@ form.addEventListener('submit', (e) => {
         books = books.filter(b => b.id !== id);
         renderBooks();
       }
+
+
+
+      function changerStatut(id) {
+        const livre = books.find(b => b.id === id);
+        livre.statut = livre.statut === 'disponible' ? 'emprunté' : 'disponible';
+        renderBooks();
+      }
