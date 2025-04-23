@@ -24,3 +24,20 @@ form.addEventListener('submit', (e) => {
     renderBooks();
   });
   
+
+  filter.addEventListener('change', renderBooks);
+
+
+
+  function renderBooks() {
+    const selectedCat = filter.value;
+    bookList.innerHTML = '';
+  
+    const filteredBooks = selectedCat
+      ? books.filter(b => b.categorie === selectedCat)
+      : books;
+  
+    if (filteredBooks.length === 0) {
+      bookList.innerHTML = '<p class="text-center text-gray-500">Aucun livre à afficher.</p>';
+      return;
+    }
