@@ -43,7 +43,25 @@ form.addEventListener('submit', (e) => {
     }
 
 
+    filteredBooks.forEach(book => {
+        const div = document.createElement('div');
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+        bookList.appendChild(div);
+    });
+  }
 
     function supprimerLivre(id) {
         books = books.filter(b => b.id !== id);
