@@ -47,18 +47,21 @@ form.addEventListener('submit', (e) => {
         const div = document.createElement('div');
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+        div.className = 'bg-white shadow-sm border border-gray-200 p-4 rounded-lg';
+        div.innerHTML = `
+          <p><span class="font-semibold">Titre:</span> ${book.titre}</p>
+          <p><span class="font-semibold">Auteur:</span> ${book.auteur}</p>
+          <p><span class="font-semibold">Catégorie:</span> ${book.categorie}</p>
+          <p><span class="font-semibold">Statut:</span> ${book.statut}</p>
+          <div class="mt-2 flex gap-2">
+            <button onclick="supprimerLivre(${book.id})"
+              class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">🗑️ Supprimer</button>
+            <button onclick="changerStatut(${book.id})"
+              class="bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600">
+              🔁 ${book.statut === 'disponible' ? 'Emprunter' : 'Rendre'}
+            </button>
+          </div>
+        `;
         bookList.appendChild(div);
     });
   }
