@@ -41,3 +41,11 @@ form.addEventListener('submit', (e) => {
       bookList.innerHTML = '<p class="text-center text-gray-500">Aucun livre à afficher.</p>';
       return;
     }
+
+
+
+
+    function supprimerLivre(id) {
+        books = books.filter(b => b.id !== id);
+        renderBooks();
+      }
