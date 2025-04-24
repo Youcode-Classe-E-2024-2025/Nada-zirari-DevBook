@@ -1,21 +1,21 @@
 const path = require('path');
-const Book = require('../models/Book');
+const livre = require('../models/livre');
 
 exports.getAll = (req, res) => {
-    Book.getAll((err, books) => {
+    livre.getAll((err, livres) => {
         if (err) {
             console.error(err);
             return res.status(500).send("erreur");
         }
-        res.json(books);
+        res.json(livres);
     });
 };
 
 exports.create = (req, res) => {
     const { titre, description, auteur, category_id } = req.body;
-    const book = new Book(null, titre, description, auteur, category_id);
+    const livre = new livre(null, titre, description, auteur, category_id);
 
-    book.save((err, rslt) => {
+    livre.save((err, rslt) => {
         if (err) {
             console.error(err);
             return res.status(500).send("erreur");
@@ -26,7 +26,7 @@ exports.create = (req, res) => {
     exports.getById = (req, res) => {
         const { id } = req.params;
 
-        Book.findById(id, (err, rslt) => {
+        livre.findById(id, (err, rslt) => {
             if (err) {
                 console.log(err);
                 return res.status(500).send("erreur");
@@ -41,14 +41,14 @@ exports.create = (req, res) => {
         const { id } = req.params;
         const { titre, description, auteur, category_id, read_status, dispo_status } = req.body;
 
-        const book = new Book(id, titre, description, auteur, category_id, read_status, dispo_status);
+        const livre = new livre(id, titre, description, auteur, category_id, read_status, dispo_status);
 
-        book.update((err, rslt) => {
+        livre.update((err, rslt) => {
             if (err) {
                 console.error(err);
                 return res.status(500).send("erreur");
             }
-            res.send("book updated");
+            res.send("livre updated");
         });
     };
 };
@@ -56,7 +56,7 @@ exports.create = (req, res) => {
 exports.delete = (req, res) => {
     const { id } = req.params;
 
-    Book.delete(id, (err, rslt) => {
+    livre.delete(id, (err, rslt) => {
         if (err) {
             console.error(err);
             return res.status(500).send("erreur");
@@ -68,7 +68,7 @@ exports.delete = (req, res) => {
 exports.filterByCategory = (req, res) => {
     const { categoryId } = req.params;
 
-    Book.filterByCategory(categoryId, (err, rslt) => {
+    livre.filterByCategory(categoryId, (err, rslt) => {
         if (err) {
             console.error(err);
             return res.status(500).send("erreur");
@@ -80,7 +80,7 @@ exports.filterByCategory = (req, res) => {
 exports.search = (req, res) => {
     const { q } = req.query;
 
-    Book.search(q, (err, rslt) => {
+    livre.search(q, (err, rslt) => {
         if (err) {
             console.error(err);
             return res.status(500).send("erreur");

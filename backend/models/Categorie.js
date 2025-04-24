@@ -1,8 +1,8 @@
-class Categorie {
+class categorie {
     constructor(id, nom) {
       this.id = id;
       this.nom = nom;
     }
   }
-  module.exports = Categorie;
+  module.exports = categorie;
   
