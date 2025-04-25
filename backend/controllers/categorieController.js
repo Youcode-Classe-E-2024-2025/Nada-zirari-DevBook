@@ -1,11 +1,11 @@
 const path = require('path');
-const Categorie = require('../models/categorie');
+const Categorie = require('../models/Categorie');
 
 exports.getAll = (req, res) => {
     Categorie.getAll((err, categories) => {
         if (err) {
             console.error(err);
-            return res.status(500).send("erreur");
+            return res.status(500).send("erreu   r");
         }
         res.json(categories);
     });
